@@ -15,10 +15,12 @@
         <h2>1. Color changer</h2>
         <button id="gray_button">Gray</button>
         <button id="blue_button">Blue</button>
+        <button id="pink_button">Pink</button>
         <div id="color_box" class="gray"></div>        
         <script>
             const gray_button = document.getElementById("gray_button");
             const blue_button = document.getElementById("blue_button");
+            const pink_button = document.getElementById("pink_button");
             const color_box = document.getElementById("color_box");
             gray_button.onclick = function() {
                 color_box.className = "gray";
@@ -26,11 +28,9 @@
             blue_button.onclick = function () {
                 color_box.className = "blue";
             }
-            /* TODO 1
-             *
-             * Add a third button (and the associated event handler)
-             * to support an additional color: pink
-             */
+            pink_button.onclick = function () {
+                color_box.className = "pink";
+            }
         </script>
 
         <hr>
@@ -39,17 +39,13 @@
         <button id="counter_button">This fabulous button</button>
         has been clicked <span id="countspan">0</span> times.
         <script>
-            var count=0;
+            var count = 0;
             const counter_button = document.getElementById("counter_button");
-            const countspan = document.getElementById("countspan");
+            let countspan = document.getElementById("countspan");
             counter_button.onclick = function() {
-                /* TODO 2
-                 *
-                 * Fill in this function so that it increments
-                 * (adds one to) the variable named count,
-                 * then updates the text content of "countspan"
-                 * to show the current value of "count".
-                 */
+                count++;
+                console.log(count);
+                countspan.innerHTML = count;
             }
         </script>
 
@@ -60,6 +56,15 @@
         <script>
             const even_or_odd_button = document.getElementById("even_or_odd_button");
             even_or_odd_button.onclick = function() {
+                if(countspan.innerHTML % 2 == 0)
+                {
+                    alert("Even Number");
+                    }
+                else
+                {
+                    alert("Odd Number");
+                }
+                console.log(even_or_odd_button)
                 /* TODO 3
                  *
                  * Fill in this function so that it shows an
